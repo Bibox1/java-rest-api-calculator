@@ -30,7 +30,7 @@ pipeline{
         stage('Push Docker Image') {
             steps {
                 withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
-                    sh "docker login -u arab112 -p ${dockerHubPwd}"
+                sh "docker login -u arab112 -p ${dockerHubPwd}"
                 }
             }
             sh "docker push arab112/calculator"
